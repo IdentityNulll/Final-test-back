@@ -19,7 +19,6 @@ const userSchema = new schema({
     required: true,
     trim: true,
     minlength: 6,
-
   },
   age: {
     type: Number,
@@ -34,54 +33,46 @@ const userSchema = new schema({
     },
     trim: true,
   },
-  position : {
+  position: {
     type: String,
     required: true,
     trim: true,
   },
-  company : {
+  company: {
     type: String,
     required: true,
     trim: true,
   },
-  location : {
+  location: {
     type: String,
     required: true,
     trim: true,
   },
-  birthday : {
+  birthday: {
     type: Date,
     required: true,
     trim: true,
   },
-  contact : {
-    email: {
-        type: String,
-        required: true,
-        trim: true,
-        lowercase: true,
-    },
-    phone: {
-        type: Number,
-        required: true,
-        trim: true,
-    }
+  phone: {
+    type: Number,
+    required: true,
+    trim: true,
   },
-  tasks : {
-    backlogTasks : {
-        type: Number,
-        default: 0,
-        trim: true,
+  tasks: {
+    backlogTasks: {
+      type: Number,
+      default: 0,
+      trim: true,
     },
-    taskInProgress : {
-        type: Number,
-        default: 0,
-        trim: true,
+    taskInProgress: {
+      type: Number,
+      default: 0,
+      trim: true,
     },
-    taskInReview : {
-        type: Number,
-        default: 0,
-        trim: true,
-    }
-  }
+    taskInReview: {
+      type: Number,
+      default: 0,
+      trim: true,
+    },
+  },
 });
