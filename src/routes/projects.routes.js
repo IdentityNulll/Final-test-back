@@ -1,12 +1,19 @@
-const express = require("express")
+const express = require("express");
+const router = express.Router();
 
-const {getProjects, createProjects, getProjectById, updateProject, deleteProject} = require("../controllers/projects.controller")
+const {
+  getProjects,
+  createProject,
+  getProjectById,
+  updateProject,
+  deleteProject,
+} = require("../controllers/projects.controller");
 
-
-router.post("/createProject", createProjects)
-router.get("/projects", getProjects)
-router.get("/getById", getProjectById)
-router.put("/updateProject", updateProject)
-router.delete("/deleteProject", deleteProject)
+// Routes
+router.post("/createProject", createProject);
+router.get("/projects", getProjects);
+router.get("/getById/:id", getProjectById); // usually you pass :id
+router.put("/updateProject/:id", updateProject);
+router.delete("/deleteProject/:id", deleteProject);
 
 module.exports = router;
