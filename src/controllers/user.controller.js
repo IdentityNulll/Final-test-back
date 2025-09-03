@@ -66,32 +66,37 @@ const createUser = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
-    // 1. Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser)
       return res.status(400).json({ message: "Email already in use" });
 
-    // 2. Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // 3. Create new user
     const newUser = new User({
       name,
       email,
       password: hashedPassword,
     });
 
-    // 4. Save user
     const savedUser = await newUser.save();
 
-    // 5. Return user info without password
+    // Create token right after registration
+    const token = jwt.sign(
+      { id: savedUser._id, email: savedUser.email, name: savedUser.name },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+
+    // Exclude password from response
     const { password: _, ...userData } = savedUser._doc;
-    res.status(201).json(userData);
+
+    res.status(201).json({ token, user: userData });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
+
 module.exports = {
   loginUser,
   getProfile,

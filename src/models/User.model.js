@@ -35,27 +35,27 @@ const userSchema = new schema({
   },
   position: {
     type: String,
-    required: true,
+    required: false, // not required at registration
     trim: true,
   },
   company: {
     type: String,
-    required: true,
+    required: false, // not required at registration
     trim: true,
   },
   location: {
     type: String,
-    required: true,
+    required: false, // not required at registration
     trim: true,
   },
   birthday: {
     type: Date,
-    required: true,
+    required: false, // not required at registration
     trim: true,
   },
   phone: {
     type: Number,
-    required: true,
+    required: false, // not required at registration
     trim: true,
   },
   tasks: {
@@ -76,3 +76,5 @@ const userSchema = new schema({
     },
   },
 });
+
+module.exports = mongoose.model("User", userSchema);
