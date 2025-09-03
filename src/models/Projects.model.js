@@ -31,5 +31,10 @@ const projectSchema = new schema ({
         type : String,
         required: true,
         trim: true,
+    },
+    status : {
+        type : String,
+        required: true,
+        trim: true,
     }
 })
