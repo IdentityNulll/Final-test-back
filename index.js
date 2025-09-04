@@ -1,12 +1,22 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cors = require("cors");
+
 const userRoutes = require("./src/routes/user.routes");
-const projectRoutes = require("./src/routes/projects.routes")
+const projectRoutes = require("./src/routes/projects.routes");
 
 dotenv.config();
 
 const app = express();
+
+// ✅ Enable CORS
+app.use(cors({
+  origin: "http://localhost:5173", // allow your frontend
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // routes
