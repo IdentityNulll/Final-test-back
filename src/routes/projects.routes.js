@@ -17,3 +17,4 @@ router.put("/updateProject/:id", updateProject);
 router.delete("/deleteProject/:id", deleteProject);
 
 module.exports = router;
+

@@ -13,7 +13,8 @@ const getProjects = async (req, res) => {
 // Create a new project
 const createProject = async (req, res) => {
   const { name, startTime, deadLine, priority, assignee, description, status } = req.body;
-
+  console.log(req.body);
+  
   try {
     const newProject = new Project({
       name,

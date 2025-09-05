@@ -8,12 +8,14 @@ const projectSchema = new schema ({
         trim: true,
     },
     startTime : {
-        type : Number,
+        type: String,
         required: true,
+        default:Date.now,
         trim: true,
     },
     deadLine : {
-        type : Number,
+        type : String,
+        default:Date.now,
         required: true,
         trim: true,
     },
@@ -38,3 +40,5 @@ const projectSchema = new schema ({
         trim: true,
     }
 })
+
+module.exports = mongoose.model("Projects",projectSchema)
