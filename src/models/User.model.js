@@ -74,6 +74,11 @@ const userSchema = new schema({
       default: 0,
       trim: true,
     },
+    profilePic: {
+      type: String,
+      default: "https://picum.photos/id/59/200/200",
+      trim: true,
+    },
   },
 });
 
