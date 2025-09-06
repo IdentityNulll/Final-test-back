@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const userRoutes = require("./src/routes/user.routes");
 const projectRoutes = require("./src/routes/projects.routes");
+const eventRoutes = require("./src/routes/events.routes");
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ app.use(express.json());
 // routes
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
+app.use("/api/events", eventRoutes);
+
 
 // connect DB and start server
 mongoose.connect(process.env.MONGO_URI)
