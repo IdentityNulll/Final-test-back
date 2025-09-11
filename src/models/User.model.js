@@ -45,17 +45,17 @@ const userSchema = new schema({
   },
   location: {
     type: String,
-    required: false, // not required at registration
+    required: false, 
     trim: true,
   },
   birthday: {
     type: Date,
-    required: false, // not required at registration
+    required: false, 
     trim: true,
   },
   phone: {
     type: Number,
-    required: false, // not required at registration
+    required: false,
     trim: true,
   },
   tasks: {
@@ -74,11 +74,11 @@ const userSchema = new schema({
       default: 0,
       trim: true,
     },
-    profilePic: {
-      type: String,
-      default: "https://picum.photos/id/59/200/200",
-      trim: true,
-    },
+  },
+  profilePic: {
+    type: String,
+    default: "https://picsum.photos/id/320/200/200",
+    trim: true,
   },
 });
 
