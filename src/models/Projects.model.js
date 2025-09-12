@@ -38,7 +38,8 @@ const projectSchema = new schema ({
         type : String,
         required: true,
         trim: true,
-    }
-})
+    },
+    tasks : [{type: mongoose.Schema.Types.ObjectId, ref: "Tasks"}]
+}, { timestamps: true })
 
 module.exports = mongoose.model("Projects",projectSchema)

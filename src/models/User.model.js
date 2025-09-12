@@ -35,12 +35,12 @@ const userSchema = new schema({
   },
   position: {
     type: String,
-    required: false, // not required at registration
+    required: false, 
     trim: true,
   },
   company: {
     type: String,
-    required: false, // not required at registration
+    required: false, 
     trim: true,
   },
   location: {

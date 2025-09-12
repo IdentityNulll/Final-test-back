@@ -6,6 +6,7 @@ const cors = require("cors");
 const userRoutes = require("./src/routes/user.routes");
 const projectRoutes = require("./src/routes/projects.routes");
 const eventRoutes = require("./src/routes/events.routes");
+const taskRoutes = require("./src/routes/tasks.routes");
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/projects", taskRoutes);
 
 
 // connect DB and start server
